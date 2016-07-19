@@ -1896,6 +1896,48 @@
           }
         }
       },
+      "SapientGuardian.MySql.Data/6.9.8-rc2-007": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1-rc2-24027",
+          "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc2-final",
+          "System.Collections": "4.0.11-rc2-24027",
+          "System.Collections.NonGeneric": "4.0.1-rc2-24027",
+          "System.Collections.Specialized": "4.0.1-rc2-24027",
+          "System.ComponentModel.TypeConverter": "4.0.1-rc2-24027",
+          "System.Console": "4.0.0-rc2-24027",
+          "System.Data.Common": "4.0.1-rc2-24027",
+          "System.Diagnostics.Debug": "4.0.11-rc2-24027",
+          "System.Diagnostics.TraceSource": "4.0.0-rc2-24027",
+          "System.Diagnostics.Tracing": "4.1.0-rc2-24027",
+          "System.IO.FileSystem": "4.0.1-rc2-24027",
+          "System.Linq": "4.1.0-rc2-24027",
+          "System.Net.NameResolution": "4.0.0-rc2-24027",
+          "System.Net.Primitives": "4.0.11-rc2-24027",
+          "System.Net.Security": "4.0.0-rc2-24027",
+          "System.Net.Sockets": "4.1.0-rc2-24027",
+          "System.Reflection": "4.1.0-rc2-24027",
+          "System.Reflection.Extensions": "4.0.1-rc2-24027",
+          "System.Reflection.TypeExtensions": "4.1.0-rc2-24027",
+          "System.Resources.Writer": "4.0.0-rc2-24027",
+          "System.Runtime.InteropServices": "4.1.0-rc2-24027",
+          "System.Runtime.Serialization.Primitives": "4.1.1-rc2-24027",
+          "System.Security.Cryptography.Algorithms": "4.1.0-rc2-24027",
+          "System.Security.Cryptography.Primitives": "4.0.0-rc2-24027",
+          "System.Security.Cryptography.X509Certificates": "4.1.0-rc2-24027",
+          "System.Text.Encoding": "4.0.11-rc2-24027",
+          "System.Text.Encoding.Extensions": "4.0.11-rc2-24027",
+          "System.Text.RegularExpressions": "4.0.12-rc2-24027",
+          "System.Threading": "4.0.11-rc2-24027",
+          "System.Threading.Timer": "4.0.1-rc2-24027"
+        },
+        "compile": {
+          "lib/netstandard1.3/SapientGuardian.MySql.Data.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/SapientGuardian.MySql.Data.dll": {}
+        }
+      },
       "System.AppContext/4.1.0": {
         "type": "package",
         "dependencies": {
@@ -2306,6 +2348,31 @@
         },
         "compile": {
           "ref/netstandard1.0/System.Diagnostics.Tools.dll": {}
+        }
+      },
+      "System.Diagnostics.TraceSource/4.0.0-rc2-24027": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.11-rc2-24027",
+          "System.Diagnostics.Debug": "4.0.11-rc2-24027",
+          "System.Globalization": "4.0.11-rc2-24027",
+          "System.Resources.ResourceManager": "4.0.1-rc2-24027",
+          "System.Runtime": "4.1.0-rc2-24027",
+          "System.Runtime.Extensions": "4.1.0-rc2-24027",
+          "System.Threading": "4.0.11-rc2-24027"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Diagnostics.TraceSource.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.3/System.Diagnostics.TraceSource.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win7/lib/netstandard1.3/System.Diagnostics.TraceSource.dll": {
+            "assetType": "runtime",
+            "rid": "win7"
+          }
         }
       },
       "System.Diagnostics.Tracing/4.1.0": {
@@ -3130,6 +3197,23 @@
         },
         "compile": {
           "ref/netstandard1.0/System.Resources.ResourceManager.dll": {}
+        }
+      },
+      "System.Resources.Writer/4.0.0-rc2-24027": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.11-rc2-24027",
+          "System.IO": "4.1.0-rc2-24027",
+          "System.Resources.ResourceManager": "4.0.1-rc2-24027",
+          "System.Runtime": "4.1.0-rc2-24027",
+          "System.Runtime.Extensions": "4.1.0-rc2-24027",
+          "System.Text.Encoding": "4.0.11-rc2-24027"
+        },
+        "compile": {
+          "lib/netstandard1.3/System.Resources.Writer.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Resources.Writer.dll": {}
         }
       },
       "System.Runtime/4.1.0": {
@@ -5410,6 +5494,16 @@
         "runtimes/win7-x86/native/sni.dll"
       ]
     },
+    "SapientGuardian.MySql.Data/6.9.8-rc2-007": {
+      "sha512": "I6R9fwJ433fPBAFSelZT6CnLGo6bk1JEp4X5qcqtV05pwg2LgSq6GTwXV6fmAx+dnQi5uQ9JjHIYarZtK2MrEA==",
+      "type": "package",
+      "path": "SapientGuardian.MySql.Data/6.9.8-rc2-007",
+      "files": [
+        "SapientGuardian.MySql.Data.6.9.8-rc2-007.nupkg.sha512",
+        "SapientGuardian.MySql.Data.nuspec",
+        "lib/netstandard1.3/SapientGuardian.MySql.Data.dll"
+      ]
+    },
     "System.AppContext/4.1.0": {
       "sha512": "kq8PdtW68jE1lrKgz9X6Wlc6XrH0wQkfF5Xm1Hd2VIpL859hmmEvfvOgQPTdn28KOAI6W0VgCwcLBXqpDSK/5w==",
       "type": "package",
@@ -6386,6 +6480,45 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "System.Diagnostics.TraceSource/4.0.0-rc2-24027": {
+      "sha512": "qv6TcsC9l4V79sDIiMJzRmQbIXywMHWpHAnkoVhR+lDxeQp9+rutN+rVL/8vvRD5/a4FiX9SV971K4FaKHBv3w==",
+      "type": "package",
+      "path": "System.Diagnostics.TraceSource/4.0.0-rc2-24027",
+      "files": [
+        "System.Diagnostics.TraceSource.4.0.0-rc2-24027.nupkg.sha512",
+        "System.Diagnostics.TraceSource.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Diagnostics.TraceSource.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Diagnostics.TraceSource.dll",
+        "ref/netstandard1.3/System.Diagnostics.TraceSource.dll",
+        "ref/netstandard1.3/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/de/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/es/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/fr/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/it/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/ja/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/ko/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/ru/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/zh-hans/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/zh-hant/System.Diagnostics.TraceSource.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netstandard1.3/System.Diagnostics.TraceSource.dll",
+        "runtimes/win7/lib/netcore50/_._",
+        "runtimes/win7/lib/netstandard1.3/System.Diagnostics.TraceSource.dll"
       ]
     },
     "System.Diagnostics.Tracing/4.1.0": {
@@ -8360,6 +8493,18 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
+    "System.Resources.Writer/4.0.0-rc2-24027": {
+      "sha512": "pAAT9yPWhNYloj3NQUFGKrdeccpkpybWIW9atArPGESgpC09ZV9J90n1TeALLDyBiG07sBDo8mial0jM1XF6hA==",
+      "type": "package",
+      "path": "System.Resources.Writer/4.0.0-rc2-24027",
+      "files": [
+        "System.Resources.Writer.4.0.0-rc2-24027.nupkg.sha512",
+        "System.Resources.Writer.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.3/System.Resources.Writer.dll"
+      ]
+    },
     "System.Runtime/4.1.0": {
       "sha512": "V6h69gNCuflloFgi9KN8XQa87WytvB5/hufCGM8o1lmstn/sza64qVxV+qrmvl0KZvvAmZIWUgSqtDxcuCArZQ==",
       "type": "package",
@@ -10087,6 +10232,7 @@
       "Microsoft.Extensions.Caching.Memory >= 1.0.0",
       "Microsoft.Extensions.Logging.Console >= 1.0.0",
       "Microsoft.NETCore.App >= 1.0.0",
+      "SapientGuardian.MySql.Data >= 6.9.8-rc2-007",
       "System.Data.SqlClient >= 4.1.0",
       "System.Drawing >= 1.0.0-beta004"
     ],
