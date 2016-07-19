@@ -13,5 +13,10 @@ namespace ConsoleApp.Services{
         public bool Update(ArtDetailModel model){
             return artDetailRespository.Update(model);
         }
+        
+        public string GetModel(int ArtId)
+        {
+            return artDetailRespository.GetModel(ArtId);
+        }
     }
 }
