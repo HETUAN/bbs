@@ -12,8 +12,8 @@
             @for (var index = 0; index < Model.Count; index++)
             {
                 <tr>
-                    <td><a href="Article/Art/@Model[index].ArtID">@Model[index].ArtTitle </a></td>
-                    <td><a href="Article/Art/@Model[index].ArtID">@Model[index].ArtDetail</a></td>
+                    <td><a target="_blank" href="Article/Art/@Model[index].ArtID">@Model[index].ArtTitle </a></td>
+                    <td><a target="_blank" href="Article/Art/@Model[index].ArtID">@Model[index].ArtDetail</a></td>
                     <td>@Model[index].UserName</td>
                     <td>@Model[index].EditTime</td>
                     <td>@Model[index].ArtTypeName</td>

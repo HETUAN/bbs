@@ -9,9 +9,9 @@ namespace ConsoleApp.Controllers
             return View(artServices.GetList());
         }
 
-        public IActionResult Art(int ArtId){
+        public IActionResult Art(int id){
             Services.ArtDetailService artDetailServices = new Services.ArtDetailService();
-            return Content(artDetailServices.GetModel(ArtId));
+            return Content(artDetailServices.GetModel(id));
         }
 
         public IActionResult ArtList(){

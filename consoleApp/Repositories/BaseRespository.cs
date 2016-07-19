@@ -63,7 +63,7 @@ namespace ConsoleApp.Resopsitories
         protected int ExecuteNonQuery(MySqlConnection con, string sql, object param = null)
         {
             //修改数据
-            int row = con.Execute("update user set UserName = 'linezero123' where Id = @Id", new { Id = param });
+            int row = con.Execute(sql, param);
             return row;
         }
 
