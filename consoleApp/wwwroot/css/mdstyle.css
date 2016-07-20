@@ -75,7 +75,7 @@ pre {
     background: #f0f0f0;
     line-height: 20px;
     overflow: auto;
-    background: url(code-bg.png) repeat-y left top;
+    background: url(../img/code-bg.png) repeat-y left top;
     overflow-Y: hidden;
     padding-left: 10px;
 }
