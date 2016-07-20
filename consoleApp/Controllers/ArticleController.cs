@@ -8,7 +8,17 @@ namespace ConsoleApp.Controllers
             Services.ArticleService artServices = new Services.ArticleService();
             return View(artServices.GetList());
         }
-
+        
+        public IActionResult ArtDet(int id){
+            Services.ArtDetailService artDetailServices = new Services.ArtDetailService();
+            if(id==null||id==0)
+            {
+                return RedirectToAction("Index");
+            }
+            string mdstr = artDetailServices.GetModel(id);
+            ViewData["mdstr"] = mdstr;
+            return View();
+        }
         public IActionResult Art(int id){
             Services.ArtDetailService artDetailServices = new Services.ArtDetailService();
             return Content(artDetailServices.GetModel(id));
