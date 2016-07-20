@@ -7,9 +7,7 @@
 }
 
 <div id="editor">
-      <textarea v-model="input" style="display: none;" debounce="300">
-          @ViewData["mdstr"]
-      </textarea>
+      <textarea v-model="input" style="display: none;" debounce="300">@ViewData["mdstr"]</textarea>
       <div v-html="input | marked"></div>
 </div>
 
