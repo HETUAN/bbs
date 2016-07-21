@@ -1,0 +1,30 @@
+@{
+    Layout = "_Layout";
+}
+
+@section css{
+    <link rel="stylesheet" href="~/css/mdstyle.css" />
+}
+
+<div id="editor">
+      <textarea v-model="input" style="display: none;" debounce="300">@ViewData["mdstr"]</textarea>
+      <div v-html="input | marked"></div>
+</div>
+
+@section scripts{
+    <script src="~/lib/vue/dist/vue.js"></script> 
+    <script src="~/js/marked.min.js"></script> 
+    <script>
+      new Vue({
+        el: '#editor',
+        data: {
+          input: ''
+        },
+        filters: {
+          marked: marked
+        }
+      })
+    </script>
+}
+
+

@@ -6,7 +6,7 @@ namespace ConsoleApp.Controllers
     public class HomeController : Controller{
 
         public IActionResult Index(){
-            return RedirectToAction("Index", "User");
+            return RedirectToAction("Index", "Article");
         }
 
         public IActionResult About(){

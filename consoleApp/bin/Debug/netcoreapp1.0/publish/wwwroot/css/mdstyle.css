@@ -1,0 +1,127 @@
+html,
+body,
+#editor {
+    margin: 0;
+    height: 100%;
+    font-family: PingFang SC, Hiragino Sans GB, Helvetica Neue, Microsoft Yahei, WenQuanYi Micro Hei, sans-serif;
+    color: #333;
+}
+
+textarea,
+#editor div {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+textarea {
+    border: none;
+    border-right: 1px solid #ccc;
+    resize: none;
+    outline: none;
+    background-color: #f6f6f6;
+    font-size: 14px;
+    font-family: 'Monaco', courier, monospace;
+    padding: 20px;
+}
+
+code {
+    color: #f66;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #009688;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-left: 1px solid #888;
+    border-top: 1px solid #888;
+    background: #efefef;
+}
+
+th,
+td {
+    border-right: 1px solid #888;
+    border-bottom: 1px solid #888;
+    padding: 5px 15px;
+}
+
+th {
+    font-weight: bold;
+    background: #ccc;
+}
+
+pre {
+    word-wrap: break-word;
+    border: 1px solid #dfdfdf;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding: 0.125rem 0.3125rem 0.0625rem;
+    font-size: 12px;
+    padding: 0;
+    margin-left: 0px;
+    background: #f0f0f0;
+    line-height: 20px;
+    overflow: auto;
+    background: url(../img/code-bg.png) repeat-y left top;
+    overflow-Y: hidden;
+    padding-left: 10px;
+}
+
+code {
+    border: 0;
+    border-radius: 4px;
+    color: #2C3E50;
+    font-size: 90%;
+    padding: 2px 4px;
+    /*
+    white-space: nowrap
+    background-color: #D6DBDF;
+    border-color: #dfdfdf;
+    border-style: solid;
+    border-width: 1px;
+    */
+    color: #333;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    font-weight: normal;
+    padding: 0.125rem 0.3125rem 0.0625rem;
+    text-indent: 0em;
+}
+
+blockquote {
+    border-color: #716565;
+    background-color: #D6DBDF;
+    margin: 10px 1px;
+    padding: 1px;
+    padding: 10px 15px;
+    border-left-style: solid;
+    border-left-width: 10px;
+}
+
+blockquote ul {
+    list-style: inside;
+}
+
+blockquote p {
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 25px;
+    margin: 0 0 10px;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
