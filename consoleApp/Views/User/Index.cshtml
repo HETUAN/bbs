@@ -4,7 +4,7 @@
 }
 
 <h1>Login</h1>
-<form id="form" class="form-horizontal" role="form" action="User/Login" method="post" >
+<form id="form" class="form-horizontal" role="form" action="~/User/Login" method="post" >
    <div class="form-group">
       <label for="UserName" class="col-sm-2 control-label">用户名</label>
       <div class="col-sm-10">
@@ -22,7 +22,7 @@
    <div class="form-group">
       <label for="CheckCode" class="col-sm-2 control-label">验证码</label>
       <div class="col-sm-10 form-inline">
-          <img id="checkimg" src="User/CheckCode" class="" />
+          <img id="checkimg" src="~/User/CheckCode" class="" />
          <input type="text" class="form-control" name="CheckCode" id="CheckCode" 
             placeholder="请输入验证码" />
       </div>
@@ -50,7 +50,7 @@
         $("#checkimg").click(function(){
             //
             console.log("asdf");
-            $("#checkimg").attr("src","User/CheckCode?id="+Math.random())
+            $("#checkimg").attr("src","/User/CheckCode?id="+Math.random())
         });
     })
     </script>
