@@ -9,8 +9,8 @@ namespace ConsoleApp.Models
         public int UserID{get;set;}
         public DateTime AddTime{get;set;}
         public DateTime EditTime{get;set;}
-        public int ArticlesState{get;set;}
-        public int ArticlesIsDelete{get;set;}
+        public int ArticleState{get;set;}
+        public int ArticleIsDelete{get;set;}
         public int ArtTypeID{get;set;}
     }
     
@@ -22,8 +22,17 @@ namespace ConsoleApp.Models
         public string UserName{get;set;}
         public DateTime AddTime{get;set;}
         public DateTime EditTime{get;set;}
-        public int ArticlesState{get;set;} 
+        public int ArticleState{get;set;} 
         //public int ArtTypeID{get;set;}
         public string ArtTypeName{get;set;}
+    }
+
+    public class ArticleEditModel{
+        public int ArtID{get;set;}
+        public string ArtTitle{get;set;}
+        public string ArtDetail{get;set;}
+        public int ArtTypeID{get;set;}
+        public string DetContent{get;set;}
+
     }
 }

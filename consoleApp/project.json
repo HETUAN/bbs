@@ -32,7 +32,8 @@
     "Microsoft.AspNetCore.Http.Abstractions":"1.0.0",
     "Microsoft.AspNetCore.Session": "1.0.0",
     "Microsoft.Extensions.Caching.Memory": "1.0.0",
-    "SapientGuardian.MySql.Data": "6.9.8-rc2-007"
+    "SapientGuardian.MySql.Data": "6.9.8-rc2-007",
+    "Newtonsoft.Json": "9.0.1"
   },
   "frameworks": {
     "netcoreapp1.0": {

@@ -32,7 +32,7 @@ namespace ConsoleApp.Controllers
             }
             
             HttpContext.Session.Set("User", System.Text.Encoding.UTF8.GetBytes(UserId.ToString()));
-            return RedirectToAction("UserList", "User");
+            return RedirectToAction("ArtManage", "Article");
         }
 
         // 获取验证码

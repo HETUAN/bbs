@@ -1,19 +1,91 @@
-@model ConsoleApp.Models.ArticleViewModel
+@using ConsoleApp.Models;
+@model ConsoleApp.Models.ArticleModel
 @{
     Layout = "_Layout";
 }
 
-
+@section css{
+    <link rel="stylesheet" href="~/css/mdstyle.css" />
+}
+<h2>编辑</h2>
 <form method="post" action="ArtEdit"> 
+    <input type="hidden" id="ArtID" name="ArtID" value="@Model.ArtID" />
     <br />
-    <input type="text" id="" name="" value="@Model.ArtTitle" />
-    <br />
-    <span>
-    @Model.ArtTitle
-    </span>
-    <textarea>
-    @Model.ArtTitle
-    </textarea> 
-    <br />
+    <table border="0" style="width: 100%;">
+        <tr>
+            <td style="width:200px; height:50px;">
+                <input type="text" id="ArtTitle" name="ArtTitle" value="@Model.ArtTitle" style="width: 300px;" />
+            </td>
+            <td rowspan="2">
+                <textarea id="ArtDetail" name="ArtDetail" class="article-textarea" style="width: 800px; height:60px; padding:3px; margin:0px;" >
+                    @Model.ArtDetail
+                </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select id="" name="ArtTypeID" sel-data="@Model.ArtTypeID" style="width: 300px;">
+                     @foreach(ArticleType item in (ViewData["arttype"] as List<ArticleType>))
+                    {
+                        @if(item.ArtTypeID == @Model.ArtTypeID)
+                        {
+                            <option selected="selected">
+                            @item.ArtTypeName 
+                            </option>
+                        }else
+                        {
+                            <option>
+                            @item.ArtTypeName 
+                            </option>
+                        }
+                    } 
+                </select>
+            </td> 
+        </tr>
+    </table>
      
+    <br /> 
+    <div id="editor">
+        <textarea v-model="input"  id="DetContent" name="DetContent" class="article-textarea" style="max-width:auto; width:100%; height:500px;"> 
+        </textarea>
+        <br />
+        <br />
+        <input type="submit" style="float:right;" value="保存" />
+        <br />
+        <br />
+        <hr style=" height:2px;border:none;border-top:2px ridge  #185598;" />
+        <h3>预览</h3>
+        <div v-html="input | marked"></div>
+    </div>
 </form>
+
+
+@section scripts{
+    <script src="~/lib/vue/dist/vue.js"></script> 
+    <script src="~/js/marked.min.js"></script> 
+    <script>
+      new Vue({
+        el: '#editor',
+        data: {
+          input: ''
+        },
+        filters: {
+          marked: marked
+        }
+      });
+
+      function GetArtContent(){
+          //var artID = $("#ArtID").attr("value");
+          var artID = $("#ArtID").val();
+          $.get("../Art?id="+artID,function(data){
+              //
+              if(data!=null)
+              {
+                  $("#DetContent").val(data);
+                  $("#DetContent").change();
+              }
+          })
+      }
+      GetArtContent();
+    </script>
+}

@@ -18,9 +18,25 @@ namespace ConsoleApp.Services
             return artRespository.GetListByUserID(userID,sidx,eidx);
         }
         
-        public ArticleViewModel GetModelByID(int artID)
+        public ArticleModel GetModelByID(int artID)
         {
             return artRespository.GetModelByID(artID);
+        }
+        
+        public bool Update(Models.ArticleModel model)
+        {
+            return artRespository.Update(model);
+        }
+
+        
+        public bool Delete(int artID)
+        {
+            return artRespository.Delete(artID);
+        }
+        
+        public int Insert(Models.ArticleModel model)
+        {
+            return artRespository.Insert(model);
         }
     }
 }

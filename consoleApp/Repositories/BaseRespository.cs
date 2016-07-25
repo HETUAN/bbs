@@ -51,7 +51,7 @@ namespace ConsoleApp.Resopsitories
 
     public class BaseRespository
     { 
-        protected string ConnStr = "server=52.197.53.214;database=bbs;uid=bruce;pwd=bruce@*#%;charset='gbk'";
+        protected string ConnStr = "server=52.197.53.214;database=bbs;uid=bruce;pwd=bruce@*#%;charset='utf8'";
         protected MySqlConnection OpenSqlConnection()
         {
             // 

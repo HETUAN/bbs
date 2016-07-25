@@ -20,8 +20,8 @@
             @for (var index = 0; index < Model.Count; index++)
             {
                 <tr>
-                    <td><a target="_blank" href="Article/ArtDet/@Model[index].ArtID">@Model[index].ArtTitle </a></td>
-                    <td><a target="_blank" href="Article/ArtDet/@Model[index].ArtID">@Model[index].ArtDetail</a></td>
+                    <td><a target="_blank" href="~/Article/ArtEdit/@Model[index].ArtID">@Model[index].ArtTitle </a></td>
+                    <td><a target="_blank" href="~/Article/ArtEdit/@Model[index].ArtID">@Model[index].ArtDetail</a></td>
                     <td>@Model[index].UserName</td>
                     <td>@Model[index].EditTime</td>
                     <td>@Model[index].ArtTypeName</td>
@@ -30,4 +30,99 @@
         </tbody>
     </table>
 }
-<center><h5>数量：@Model.Count</h5></center>
+<center>
+    <h5>数量：@Model.Count</h5>
+    
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    新建
+    </button>
+</center>
+
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" 
+               aria-hidden="true">×
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               模态框（Modal）标题
+            </h4>
+         </div>
+         <div class="modal-body">
+            标题：<input type="text" id="ArtTitle" name="ArtTitle" class="form-control"  />
+            <br />
+            说明：<textarea id="ArtDetail" name="ArtDetail" class="form-control" ></textarea>
+            <br />
+            类型：
+            <select id="ArtTypeID" name="ArtTypeID" class="form-control" >
+            </select>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">关闭
+            </button>
+            <button type="button" onclick="create()" class="btn btn-primary">
+               提交更改
+            </button>
+         </div>
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="alert" style="display:none;position:absolute; background-color:red;" >
+    
+</div>
+@section scripts{
+    <script>
+         $(function () { 
+          //$('#myModal').modal('hide');
+         $('#myModal').modal({
+                keyboard: true,
+                hide:hide
+            })});
+        $('#myModal').on('show.bs.modal', function () {
+            // 绑定下拉类型数据
+            if($("#ArtTypeID").children().length>0)
+            {
+                return;
+            }
+            $.get("../ArticleType/GetList",function(data){
+                var json = JSON.parse(data);
+                var len = json.length;
+                var html = "";
+                for(var i=0;i<len;i++)
+                {
+                    var item = json[i];
+                    html+="<option value='"+json[i].ArtTypeID+"'>"+json[i].ArtTypeName+"</option>";
+                }
+                $("#ArtTypeID").html(html);
+            });
+        })
+        function create(){
+            //
+            alert("sdf");
+            var ArtTitle = $("#ArtTitle").val();
+            var ArtDetail = $("#ArtDetail").val();
+            var ArtTypeID = $("#ArtTypeID").val();
+             $.post("../Aeticle/Add", 
+            { 
+                artTitle:ArtTitle, 
+                artDetail:ArtDetail,
+                artTypeID:ArtTypeID
+            }, 
+                function(data,status){ 
+                if(data==1)
+                {
+                    $('#myModal').modal('hide')
+                }else{
+                    alert("数据: \n" + data + "\n状态: " + status); 
+                }
+            }); 
+        }
+    </script>
+
+}

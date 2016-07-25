@@ -14,7 +14,7 @@ body {
 input,
 select,
 textarea {
-    max-width: 280px;
+    /**/max-width: 280px;
 }
 
 /* Carousel */
@@ -41,4 +41,8 @@ textarea {
   .carousel-caption {
     display: none
   }
+}
+
+.article-textarea{
+    max-width: auto;
 }
