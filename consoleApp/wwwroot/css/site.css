@@ -14,7 +14,7 @@ body {
 input,
 select,
 textarea {
-    /**/max-width: 280px;
+    /*max-width: 280px;*/
 }
 
 /* Carousel */
@@ -45,4 +45,8 @@ textarea {
 
 .article-textarea{
     max-width: auto;
+}
+
+.short-input{
+    max-width: 280px;
 }
