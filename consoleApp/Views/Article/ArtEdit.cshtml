@@ -29,12 +29,12 @@
                     {
                         @if(item.ArtTypeID == @Model.ArtTypeID)
                         {
-                            <option selected="selected">
+                            <option value="@item.ArtTypeID" selected="selected">
                             @item.ArtTypeName 
                             </option>
                         }else
                         {
-                            <option>
+                            <option value="@item.ArtTypeID">
                             @item.ArtTypeName 
                             </option>
                         }

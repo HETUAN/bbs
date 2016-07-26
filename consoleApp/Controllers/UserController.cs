@@ -9,6 +9,9 @@ namespace ConsoleApp.Controllers
         //登录界面
         public IActionResult Index()
         {
+            if(CheckLogin()){
+                return RedirectToAction("ArtManage", "Article");
+            }
             return View();
         }
         

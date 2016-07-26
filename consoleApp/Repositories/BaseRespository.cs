@@ -62,20 +62,41 @@ namespace ConsoleApp.Resopsitories
 
         protected int ExecuteNonQuery(MySqlConnection con, string sql, object param = null)
         {
-            //修改数据
-            int row = con.Execute(sql, param);
-            return row;
+            try
+            {
+                //修改数据
+                int row = con.Execute(sql, param);
+                return row;
+            }
+            catch (System.Exception ex)
+            {
+                return 0;
+            }
         }
 
         protected T QuerySingle<T>(MySqlConnection con, string sql, object param = null)
         {
+            try
+            {
             return con.QueryFirst<T>(sql, param);
+            }
+            catch (System.Exception ex)
+            {
+                return default(T);
+            }
         }
 
         protected List<T> Query<T>(MySqlConnection con, string sql, object param = null)
         {
             //
-            return con.Query<T>(sql, param).ToList();
+            try
+            {
+                return con.Query<T>(sql, param).ToList();
+            }
+            catch (System.Exception ex)
+            {
+                return null;
+            }
         } 
     }
 }

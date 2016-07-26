@@ -202,6 +202,7 @@
 --resource:"e:\HEPW\MySpace\NETCore\BBS\consoleApp\obj\Debug\netcoreapp1.0\consoleAppdotnet-compile.deps.json",consoleApp.deps.json
 e:\HEPW\MySpace\NETCore\BBS\consoleApp\Program.cs
 e:\HEPW\MySpace\NETCore\BBS\consoleApp\Startup.cs
+e:\HEPW\MySpace\NETCore\BBS\consoleApp\Controllers\AboutController.cs
 e:\HEPW\MySpace\NETCore\BBS\consoleApp\Controllers\ArticleController.cs
 e:\HEPW\MySpace\NETCore\BBS\consoleApp\Controllers\ArticleTypeController.cs
 e:\HEPW\MySpace\NETCore\BBS\consoleApp\Controllers\HomeController.cs

@@ -92,13 +92,13 @@ namespace ConsoleApp.Models
         /// 创建时间
         /// </summary>
         /// <returns></returns>
-        public DateTime CreateTime{get;set;}
+        public DateTime? CreateTime{get;set;}
 
         /// <summary>
         /// 最近修改时间
         /// </summary>
         /// <returns></returns>
-        public DateTime EditTime{get;set;}
+        public DateTime? EditTime{get;set;}
 
         /// <summary>
         /// 是否删除 0-未删除 1-已删除

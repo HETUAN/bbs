@@ -62,17 +62,12 @@ namespace ConsoleApp.Resopsitories
             var strSqlRef = new StringBuilder();
             strSqlRef.Append("INSERT INTO ArtDetail");
             strSqlRef.Append("    (DetContent");
-            strSqlRef.Append("    ,ArtID)");
+            strSqlRef.Append("    ,ArtID) ");
             strSqlRef.Append("VALUES");
             strSqlRef.Append("    (@DetContent");
-            strSqlRef.Append("    ,@ArtID)");
-            SqlParameter[] parametersRef = {
-                    new SqlParameter("@DetContent", SqlDbType.Text,4),
-                    new SqlParameter("@ArtID", SqlDbType.Int,4)};
-            parametersRef[0].Value = model.DetContent;
-            parametersRef[1].Value = model.ArtID;
+            strSqlRef.Append("    ,@ArtID)"); 
 
-            int result = base.ExecuteNonQuery(base.OpenSqlConnection(), strSqlRef.ToString(), parametersRef);
+            int result = base.ExecuteNonQuery(base.OpenSqlConnection(), strSqlRef.ToString(), new {model.DetContent, model.ArtID});
             return result;
         }
 
@@ -108,5 +103,13 @@ namespace ConsoleApp.Resopsitories
         {
             return base.QuerySingle<string>(OpenSqlConnection(), "SELECT  `DetContent` FROM  `ArtDetail` WHERE`ArtID` = @ArtID", new { ArtId });
         }
+
+        public bool CheckExist(int artID)
+        {
+            string sqlStr = "SELECT COUNT(1) FROM ArtDetail WHERE ArtID = @ArtID";
+            int row = base.QuerySingle<int>(base.OpenSqlConnection(), sqlStr, new { artID });
+            return row > 0;
+        }
+
     }
 }

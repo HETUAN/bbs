@@ -145,7 +145,7 @@ namespace ConsoleApp.Controllers
                 int row = detSer.Insert(detModel);
                 if(row>0)
                 {
-                    result = 1;
+                    result = detModel.ArtID;
                 }
             }
 

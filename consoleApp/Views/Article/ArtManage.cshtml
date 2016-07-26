@@ -104,20 +104,21 @@
         })
         function create(){
             //
-            alert("sdf");
+            //alert("sdf");
             var ArtTitle = $("#ArtTitle").val();
             var ArtDetail = $("#ArtDetail").val();
             var ArtTypeID = $("#ArtTypeID").val();
-             $.post("../Aeticle/Add", 
-            { 
-                artTitle:ArtTitle, 
-                artDetail:ArtDetail,
-                artTypeID:ArtTypeID
-            }, 
+             $.post("../Article/Add", 
+                { 
+                    artTitle:ArtTitle, 
+                    artDetail:ArtDetail,
+                    artTypeID:ArtTypeID
+                }, 
                 function(data,status){ 
-                if(data==1)
+                if(data>0)
                 {
                     $('#myModal').modal('hide')
+                    window.location = "../Article/ArtEdit/"+data;
                 }else{
                     alert("数据: \n" + data + "\n状态: " + status); 
                 }

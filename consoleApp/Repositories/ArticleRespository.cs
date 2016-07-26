@@ -15,12 +15,12 @@ namespace ConsoleApp.Resopsitories
             //string sqlStr = "SELECT  `ArtID` ,  `ArtTitle` ,  `ArtDetail` ,  `UserID` ,  `AddTime` ,  `EditTime` ,  `ArticleState` ,  `ArtTypeID` FROM  `Article`  WHERE `ArticleIsDelete`= 0";
             StringBuilder sqlStr = new StringBuilder();
             sqlStr.AppendLine("SELECT art.ArtID, art.ArtTitle, art.ArtDetail, us.UserName, art.AddTime, art.EditTime, art.ArticleState, at.ArtTypeName");
-            sqlStr.AppendLine("FROM Article art");
-            sqlStr.AppendLine("LEFT JOIN ArtType at ON art.ArtTypeID = at.ArtTypeID");
-            sqlStr.AppendLine("LEFT JOIN Users us ON us.UserID = art.UserID");
-            sqlStr.AppendLine("WHERE ArticleIsDelete =0");
-            sqlStr.AppendLine("ORDER BY art.EditTime DESC");
-            sqlStr.AppendLine("LIMIT " + sidx + " , " + eidx + "");
+            sqlStr.AppendLine(" FROM Article art");
+            sqlStr.AppendLine(" LEFT JOIN ArtType at ON art.ArtTypeID = at.ArtTypeID");
+            sqlStr.AppendLine(" LEFT JOIN Users us ON us.UserID = art.UserID");
+            sqlStr.AppendLine(" WHERE ArticleIsDelete =0");
+            sqlStr.AppendLine(" ORDER BY art.EditTime DESC");
+            sqlStr.AppendLine(" LIMIT " + sidx + " , " + eidx + "");
 
             return base.Query<ArticleViewModel>(OpenSqlConnection(), sqlStr.ToString());
         }
@@ -29,13 +29,13 @@ namespace ConsoleApp.Resopsitories
         {
             //string sqlStr = "SELECT  `ArtID` ,  `ArtTitle` ,  `ArtDetail` ,  `UserID` ,  `AddTime` ,  `EditTime` ,  `ArticleState` ,  `ArtTypeID` FROM  `Article`  WHERE `ArticleIsDelete`= 0";
             StringBuilder sqlStr = new StringBuilder();
-            sqlStr.AppendLine("SELECT art.ArtID, art.ArtTitle, art.ArtDetail, us.UserName, art.AddTime, art.EditTime, art.ArticleState, at.ArtTypeName");
-            sqlStr.AppendLine("FROM Article art");
-            sqlStr.AppendLine("LEFT JOIN ArtType at ON art.ArtTypeID = at.ArtTypeID");
-            sqlStr.AppendLine("LEFT JOIN Users us ON us.UserID = art.UserID");
-            sqlStr.AppendLine("WHERE ArticleIsDelete =0 AND art.UserID =" + userID + " ");
-            sqlStr.AppendLine("ORDER BY art.EditTime DESC");
-            sqlStr.AppendLine("LIMIT " + sidx + " , " + eidx + "");
+            sqlStr.AppendLine("SELECT art.ArtID, art.ArtTitle, art.ArtDetail, us.UserName, art.AddTime, art.EditTime, art.ArticleState, at.ArtTypeName ");
+            sqlStr.AppendLine(" FROM Article art ");
+            sqlStr.AppendLine(" LEFT JOIN ArtType at ON art.ArtTypeID = at.ArtTypeID ");
+            sqlStr.AppendLine(" LEFT JOIN Users us ON us.UserID = art.UserID ");
+            sqlStr.AppendLine(" WHERE ArticleIsDelete =0 AND art.UserID =" + userID + " ");
+            sqlStr.AppendLine(" ORDER BY art.EditTime DESC ");
+            sqlStr.AppendLine(" LIMIT " + sidx + " , " + eidx + "");
 
             return base.Query<ArticleViewModel>(OpenSqlConnection(), sqlStr.ToString());
         }
@@ -76,6 +76,7 @@ namespace ConsoleApp.Resopsitories
             int row = base.ExecuteNonQuery(base.OpenSqlConnection(), sqlStr.ToString(), new { artID });
             return row > 0;
         }
+
 
         public int Insert(Models.ArticleModel model)
         {

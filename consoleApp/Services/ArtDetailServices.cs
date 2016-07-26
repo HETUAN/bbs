@@ -11,7 +11,15 @@ namespace ConsoleApp.Services{
         }
         
         public bool Update(ArtDetailModel model){
-            return artDetailRespository.Update(model);
+            
+            if (artDetailRespository.CheckExist(model.ArtID))
+            {
+                return artDetailRespository.Update(model);
+            }
+            else
+            {
+                return artDetailRespository.Insert(model) > 0;
+            } 
         }
         
         public string GetModel(int ArtId)
