@@ -1,0 +1,15 @@
+@model ConsoleApp.Models.ArticleType
+@{
+    Layout = "_Layout";
+}
+
+@if (Model != null)
+{
+    <form method="POST" action="~/ArticleType/Edit">
+        <input type="hidden" id="ArtTypeId" name="ArtTypeId" value="@Model.ArtTypeId"/>
+        <input type="text" id="ArtTypeName" name="ArtTypeName" value="@Model.ArtTypeName" />
+        <input type="submit" value="保存" />
+    </form>
+    
+}
+<center>NULL</center>

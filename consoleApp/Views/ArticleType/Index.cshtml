@@ -1,0 +1,27 @@
+@model List<ConsoleApp.Models.ArticleType>
+@{
+    Layout = "_Layout";
+}
+
+@if (Model.Count > 0)
+{
+    <h4>列表</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>名称</td>
+                <td>操作</td>  
+            </tr>
+        </thead>
+        <tbody>
+            @for (var index = 0; index < Model.Count; index++)
+            {
+                <tr>
+                    <td><a target="_blank" href="../ArticleType/Edit/@Model[index].ArtTypeID">@Model[index].ArtTypeName </a></td>  
+                    <td><a target="_blank" href="../ArticleType/Edit/@Model[index].ArtTypeID">编辑</a></td>  
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<center><h5>数量：@Model.Count</h5></center>
