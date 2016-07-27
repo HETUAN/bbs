@@ -20,6 +20,7 @@ namespace ConsoleApp.Controllers
         [HttpPost]
         public IActionResult Login(Models.LoginViewModel model)
         {
+            /*
             if (String.IsNullOrWhiteSpace(model.UserName) || String.IsNullOrWhiteSpace(model.Password) || String.IsNullOrWhiteSpace(model.CheckCode))
             {
                 return RedirectToAction("Index", "User");
@@ -28,6 +29,13 @@ namespace ConsoleApp.Controllers
             {
                 return RedirectToAction("Index", "User");
             }
+            */
+            
+            if (String.IsNullOrWhiteSpace(model.UserName) || String.IsNullOrWhiteSpace(model.Password))
+            {
+                return RedirectToAction("Index", "User");
+            }
+
             Services.UserService userService = new Services.UserService();
             int UserId = userService.GetUserID(model.UserName, Services.SecurityHelper.Md5Encrypt32(model.Password));
             if (UserId <= 0)
