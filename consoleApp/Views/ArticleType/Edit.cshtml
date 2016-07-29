@@ -1,15 +1,61 @@
+@using ConsoleApp.Models;
 @model ConsoleApp.Models.ArticleType
 @{
     Layout = "_Layout";
 }
 
+    <br />
+    <span class="errmsg">@ViewData["errmsg"]</span>
 @if (Model != null)
 {
+    <br />
     <form method="POST" action="~/ArticleType/Edit">
-        <input type="hidden" id="ArtTypeId" name="ArtTypeId" value="@Model.ArtTypeId"/>
+        <input type="hidden" id="ArtTypeId" name="ArtTypeId" value="@Model.ArtTypeID"/>
         <input type="text" id="ArtTypeName" name="ArtTypeName" value="@Model.ArtTypeName" />
         <input type="submit" value="保存" />
     </form>
     
+}else
+{
+    <br />
+    <form method="POST" action="~/ArticleType/Add">
+        <input type="hidden" id="ArtTypeId" name="ArtTypeId" value="@Model.ArtTypeID"/>
+        <input type="text" id="ArtTypeName" name="ArtTypeName" value="@Model.ArtTypeName" />
+        <input type="submit" onclick="beforsubmit()" value="保存" />
+    </form>
 }
-<center>NULL</center>
+
+@section scripts{
+    <script>
+        //
+        $(
+        $("input[type='text']").each(function(){
+            $(this).change(function(){
+                $(".errmsg").hide();
+                CheckName($(this).val());
+            });            
+        }));
+
+        function CheckName(name){
+            $.get("CheckExist?ArtTypeName="+name,function(data){
+                //
+                    console.log(data);
+                if(data==1){
+                    //console.log("已经存在");
+                    $(".errmsg").text("该类型名称已经存在");
+                    $(".errmsg").show();
+                }else
+                {
+                    //console.log("不存在");
+                    $(".errmsg").text("");
+                    $(".errmsg").hide();
+                }
+            })
+        }
+
+        function beforsubmit(){
+        alert("asdf");
+            return false;
+        }
+    </script>
+}

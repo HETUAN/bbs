@@ -50,3 +50,7 @@ textarea {
 .short-input{
     max-width: 280px;
 }
+
+.errmsg{
+    color: red;
+}

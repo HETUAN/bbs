@@ -28,40 +28,92 @@ namespace ConsoleApp.Controllers
             return View(data);
         }
 
-        public IActionResult Edit(int id)
+        public IActionResult Edit(int id = 0)
         {
+            ViewData["errmsg"] = "";
             int userID = GetUserID();
             if (userID <= 0)
             {
                 return RedirectToAction("Index", "User");
             }
-            if (id <= 0)
+            if (id > 0)
             {
-                return RedirectToAction("Index", "ArticleType");
+                //return RedirectToAction("Index", "ArticleType");
+                ArticleTypeService atSer = new ArticleTypeService();
+                var data = atSer.GetModel(id);
+                return View(data);
             }
-
-            ArticleTypeService atSer = new ArticleTypeService();
-            var data = atSer.GetModel(id);
-            return View(data);
+            else
+            {
+                var data = new Models.ArticleType();
+                return View(data);
+            }
         }
 
         [HttpPost]
         public IActionResult Edit(int ArtTypeId, string ArtTypeName)
         {
+            ViewData["errmsg"] = "";
             ArticleType model = new ArticleType();
             model.ArtTypeID = ArtTypeId;
             model.ArtTypeName = ArtTypeName;
             ArticleTypeService atSer = new ArticleTypeService();
-            if (atSer.Update(model))
+            if (ArtTypeId == 0)
             {
-                return RedirectToAction("Index", "ArticleType");
+                if(atSer.CheckExist(ArtTypeName)>0)
+                {
+                    ViewData["errmsg"] = "名称已经存在";
+                    return View(model);
+                }
+                if (atSer.Insert(model) > 0)
+                {
+                    return RedirectToAction("Index", "ArticleType");
+                }
+                else
+                {
+                    return View(model);
+                }
             }
             else
             {
-                return View(model);
+                if (atSer.Update(model))
+                {
+                    return RedirectToAction("Index", "ArticleType");
+                }
+                else
+                {
+                    return View(model);
+                }
             }
         }
-        
+
+        /// <summary>
+        /// 检查名称是否存在
+        /// </summary>
+        /// <param name="ArtTypeName"></param>
+        /// <returns></returns>
+        public IActionResult CheckExist(string ArtTypeName)
+        {
+            //
+            if (string.IsNullOrWhiteSpace(ArtTypeName))
+            {
+                //
+                return Content("1");
+            }
+            else
+            {
+                ArticleTypeService atSer = new ArticleTypeService();
+                if (atSer.CheckExist(ArtTypeName) > 0)
+                {
+                    return Content("1");
+                }
+                else
+                {
+                    return Content("0");
+                }
+            }
+        }
+
         // 验证用户登录 返回0 未登录 返回>0用户ID
         private int GetUserID()
         {

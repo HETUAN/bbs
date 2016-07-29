@@ -24,5 +24,9 @@ namespace ConsoleApp.Services
         public ArticleType GetModel(int Id){
             return artTypeRes.GetModel(Id);
         }
+        
+        public int CheckExist(string ArtTypeName){
+            return artTypeRes.CheckExist(ArtTypeName);
+        }
     }
 }

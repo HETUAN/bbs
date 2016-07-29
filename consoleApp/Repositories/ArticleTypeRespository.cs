@@ -30,5 +30,10 @@ namespace ConsoleApp.Resopsitories
             string sqlStr = "SELECT ArtTypeID, ArtTypeName, ArtTypeState, ArtTypeIsDelete FROM ArtType WHERE ArtTypeID = @Id";
             return base.QuerySingle<ArticleType>(base.OpenSqlConnection(), sqlStr, new { Id });
         }
+
+        public int CheckExist(string ArtTypeName){
+            string sqlStr = "SELECT COUNT(1) FROM ArtType WHERE ArtTypeName = @ArtTypeName AND ArtTypeIsDelete = 0";
+            return base.QuerySingle<int>(base.OpenSqlConnection(), sqlStr, new { ArtTypeName });
+        }
     }
 }
