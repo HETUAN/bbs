@@ -55,9 +55,16 @@ namespace ConsoleApp.Resopsitories
         protected MySqlConnection OpenSqlConnection()
         {
             // 
-            MySqlConnection connection = new MySqlConnection(ConnStr);
-            connection.Open();
-            return connection;
+            try
+            {
+                MySqlConnection connection = new MySqlConnection(ConnStr);
+                connection.Open();
+                return connection;
+            }
+            catch (System.Exception ex)
+            {
+                return null;
+            }
         }
 
         protected int ExecuteNonQuery(MySqlConnection con, string sql, object param = null)
