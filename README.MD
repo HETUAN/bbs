@@ -7,6 +7,10 @@
 4. Dapper(轻量级ORM)
 5. SapientGuardian.MySql.Data一个开源项目用于操作MySql
 6. VSCode 编辑器（当然会有各种插件）
+[Classy Naming](https://marketplace.visualstudio.com/items?itemName=reflectiondm.ClassyNaming)
+[C# XML Documentation Comments ](https://marketplace.visualstudio.com/items?itemName=k--kato.docomment)
+[Legacy C# Support ](https://marketplace.visualstudio.com/items?itemName=ms-vscode.omnisharp)
+[C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
 
 ## 开发过程
 ### 1. 创建一个web项目
