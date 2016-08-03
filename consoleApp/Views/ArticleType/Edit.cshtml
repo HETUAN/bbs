@@ -37,7 +37,7 @@
         }));
 
         function CheckName(name){
-            $.get("CheckExist?ArtTypeName="+name,function(data){
+            $.get("../CheckExist?ArtTypeName="+name,function(data){
                 //
                     console.log(data);
                 if(data==1){
