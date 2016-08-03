@@ -9,24 +9,21 @@
 6. VSCode 编辑器（当然会有各种插件）
 
 ## 开发过程
-
-1. 创建一个web项目
-
+### 1. 创建一个web项目
 ``` bash
 mkdir webapp
 cd webapp
 dotnet new -t web
 ```
 
-2. 创建一个Console控制台程序
-
+### 2. 创建一个Console控制台程序
 ``` bash
 mkdir consoleApp
 cd consoleApp
 dotnet new
 ```
 
-3. 将部分web项目的部分依赖复制到console项目中的dependencies节点中
+### 3. 将部分web项目的部分依赖复制到console项目中的dependencies节点中
 
 ``` bash
 
@@ -64,7 +61,7 @@ dotnet restore
 ```
 还原这些项目依赖
 
-4. 创建bower.js文件
+### 4. 创建bower.js文件
 
 相关说明在另一篇文章中
 内容是：
@@ -84,16 +81,17 @@ dotnet restore
 
 ```
 
-5. 相关目录创建
+### 5. 相关目录创建
 
+``` bash
 创建Controllers文件夹存放MVC的控制器
 创建Models文件夹存放模型
 创建Views文件夹存放视图文件
 创建Services文件夹存放相关业务逻辑类
 创建Respositories文件存放数据库操作相关类
- 
+```
+
 ## 程序部署
 1. Ubuntu 14
 2. Nginx请求转发
 3. supervisor管理程序
-
